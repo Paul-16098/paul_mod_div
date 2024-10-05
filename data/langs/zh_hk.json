@@ -1,0 +1,44 @@
+{
+  "BaseHelperExceptionMsg": "發生未知錯誤",
+  "NonExistenceSourceCodeExceptionMsg": "遊戲源碼文件夾不存在",
+  "MissingBootJsonExceptionMsg": "缺少必需的 'boot.json' 文件",
+  "add_bootjson": "'boot.json'已成功建立並寫入內容。",
+  "NonExistenceModloaderExceptionMsg": "未下載 ModLoader 或位置錯誤！請前往 https://github.com/Lyoko-Jeremie/DoLModLoaderBuild/actions 下載最新版 ModLoader 並將壓縮包中的 Degrees of Lewdity...html 文件放置於 '<根目錄>/modloader' 文件夾下",
+
+  "GetLatestCommitStartInfo": "===== 開始獲取最新倉庫版本... - {url}",
+  "GetLatestCommitMsgInfo": "\t- 最新倉庫版本: {latest_commit}\n",
+  "GetLatestCommitFinishInfo": "##### 最新倉庫版本獲取完成! - {file}\n",
+
+  "DownloadStartInfo": "===== 開始下載遊戲源代碼... - {url}",
+  "DownloadAlreadyExistInfo": "##### 'dol.zip' 文件已下載!\n",
+  "DownloadErrorInfo": "***** 錯誤: 無法下載遊戲源代碼! - 請檢查網絡連接後重試\n",
+  "DownloadFinishInfo": "##### 遊戲源代碼下載完成! - {file}\n",
+
+  "ExtractStartInfo": "===== 開始解壓遊戲源代碼...",
+  "ExtractFinishInfo": "##### 遊戲源代碼解壓完成!\n",
+
+  "DropGameDirsStartInfo": "===== 開始刪除遊戲文件夾...",
+  "DropGameDirsFinishInfo": "##### 遊戲文件夾刪除完成!\n",
+
+  "BuildBootJsonStartInfo": "===== 開始寫入 'boot.json' 文件...",
+  "BuildBootJsonNotFoundInfo": "***** 當前沒有任何模組!\n",
+  "BuildBootJsonFinishedInfo": "##### 'boot.json' 文件寫入完成!\n",
+
+  "ProcessResultsStartInfo": "===== 開始處理模組...",
+  "ProcessResultsFinishModInfo": "\t- '{name}' 模組處理完成!",
+  "ProcessResultsFinishInfo": "##### 所有模組處理完成!\n",
+
+  "ProcessPassageFinishInfo": "\t- '{filepath}' 文件的段落處理完成!",
+
+  "PackageStartInfo": "===== 開始打包模組...",
+  "PackageEmptyModInfo": "***** '{name}' 模組中無任何文件!\n",
+  "PackageFinishModInfo": "\t- '{filename}' 模組打包完成!",
+  "PackageFinishInfo": "##### 所有模組打包完成!\n",
+
+  "DropResultsDirsStartInfo": "===== 開始刪除結果文件夾...",
+  "DropResultsDirsFinishInfo": "##### 結果文件夾刪除完成!\n",
+
+  "WarningWebBrowserInfo": "如果瀏覽器未自動啓動，請手動打開 http://{host}:{port} 網頁\n",
+
+  "ChunkDownloadInfo": "\t- 分塊 {idx} / {full} 已下載"
+}

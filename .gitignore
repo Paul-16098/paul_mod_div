@@ -1,0 +1,14 @@
+# data
+data/dol.zip
+data/commits.json
+data/passage
+data/tmp
+
+degrees-of-lewdity-master
+
+# pyc
+**/__pycache__
+
+mods
+results
+modloader
