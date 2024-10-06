@@ -9,6 +9,6 @@ degrees-of-lewdity-master
 # pyc
 **/__pycache__
 
-mods
+mods/
 results
 modloader
