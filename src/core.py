@@ -168,7 +168,8 @@ class GameMod:
                 with open(DIR_MODS_ROOT / name / "boot.json", "r", encoding="utf-8") as fp:
                     data = json.load(fp)
                 self._boot_json[name]["name"] = data.get("name", name)
-                self._boot_json[name]["version"] = data.get("version", "1.0.0")
+                self._boot_json[name]["version"] = data.get(
+                    "version", "1.0.0.0")
                 self._boot_json[name]["styleFileList"] = data.get(
                     "styleFileList", [])
                 self._boot_json[name]["scriptFileList"] = data.get(
