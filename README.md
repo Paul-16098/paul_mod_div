@@ -1,9 +1,4 @@
-# [Degrees of Lewdity][dol] 模组编写小助手
-
----
-| [简体中文](README.md) | [English](data/docs/README-en.md) | ![maven](https://img.shields.io/badge/python-3.10%2B-blue)
-
----
+# [ModLoader][ModLoader] 模组编写小助手
 
 ## 目录
 
@@ -11,7 +6,7 @@
 
 <!-- code_chunk_output -->
 
-- [[Degrees of Lewdity][dol] 模组编写小助手](#degrees-of-lewditydol-模组编写小助手)
+- [[ModLoader][ModLoader] 模组编写小助手](#modloadermodloader-模组编写小助手)
   - [目录](#目录)
   - [简介](#简介)
   - [食用方法](#食用方法)
@@ -38,7 +33,7 @@
 由于[原游戏引擎](https://twinery.org/)面向字符串编程的特性，以及变量文本硬编码的困难，编写模组十分困难，因此简单十分钟手搓一个帮助编写模组的小脚本。
 使用本脚本需要微量 Python 知识。
 
-本脚本与 [ModLoader](https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader) 配合使用，可以在[这里](https://github.com/Lyoko-Jeremie/DoLModLoaderBuild/actions/)下载最新的发行版。
+本脚本与 [ModLoader](https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader) 配合使用
 
 ## 食用方法
 
@@ -46,18 +41,18 @@
 
 1. 需要 [Python 3.10+](https://www.python.org/downloads/release/python-31011/)
 2. 在根目录打开命令提示符输入 `pip install -r requirements.txt` 安装依赖库。
-3. 在 `<根目录>/mods/<模组名或作者名>` 里编写你自己的模组。(初次运行请手动创建 `mods` 文件夹)。
-4. 运行 `main.py` (在命令提示符中输入 `python -m main`)。
-5. 结果会以 zip 压缩包形式生成在 `results` 文件夹中，接下来请使用 [ModLoader](https://github.com/Lyoko-Jeremie/DoLModLoaderBuild/actions/) 进行模组加载
+3. 在 `<根目录>/mods/<模组名或作者名>` 里编写你自己的模组。
+4. - 在 windows 系統下运行 `ran.bat` (在命令提示符中输入 `./run.bat`)
+   - 在其他系統下运行 `main.py` (在命令提示符中输入 `python -m main`)。
+5. 结果会以 zip 压缩包形式生成在 `results` 文件夹中，接下来请使用 [ModLoader][ModLoader] 进行模组加载
 6. 如果将 `main.py` 中的 `REMOTE_TEST = False` 值改为 `REMOTE_TEST = True` 后运行，如此运行结果将会在每次打包完模组后自动开启本地服务器以供测试
 
 ### 本脚本的工作流程
 
-1. 每次运行前会自动删除 `results` 文件夹，__请不要向其中放置重要文件__
-2. 从源码仓库下载游戏源码并解压到根目录
-3. 根据模组内容自动编写 `boot.json` 文件中的绝大多数内容
-4. 将模组内容处理并打包为 zip 文件，可以通过 [ModLoader](https://github.com/Lyoko-Jeremie/DoLModLoaderBuild/actions/) 加载
-5. 如果已经下载了 ModLoader，并需要频繁测试，请将 `main.py` 中的 `REMOTE_TEST = False` 值修改为 `REMOTE_TEST = True`
+1. 每次运行前会自动删除 `results` 文件夹，**请不要向其中放置重要文件**
+2. 根据模组内容自动编写 `boot.json` 文件中的绝大多数内容
+3. 将模组内容处理并打包为 zip 文件，可以通过 [ModLoader][ModLoader] 加载
+4. 如果已经下载了 ModLoader，并需要频繁测试，请将 `main.py` 中的 `REMOTE_TEST = False` 值修改为 `REMOTE_TEST = True`
    - 这样将会在每次打包完模组后自动开启本地服务器以供测试，你只需要在服务器启动后刷新浏览器即可看到改动
    - 服务器地址默认为 `http://localhost:52525`
 
@@ -65,11 +60,12 @@
 
 ### 名词解释
 
-- __“段落”__
+- **“段落”**
+
   - 这是游戏内容的基本单位。
   - 在 `.twee` 文件中形如 `:: PASSAGE_NAME` 或 `:: PASSAGE_NAME [widget]` 的内容为段落的开头，从此开始一直到下一个段落开头均为此段落的内容。
 
-- __“根目录”__
+- **“根目录”**
   - `main.py` 所在的目录
 
 ### 详细说明
@@ -93,13 +89,13 @@
  │       ├── boot.json <这个文件是必需的>
  │       ├── img (参照源码目录结构放置图片等文件)
  │       ├── game (参照源码目录结构放置 .twee 等文件)
- │       ├── modules 
+ │       ├── modules
  │       │   └── css (参照源码目录结构放置 .css 等文件)
- │      ... 
+ │      ...
  ├── modloader (模组加载器，需要手动下载)
  │   ├── mods (需要频繁测试时，会自动将打包好的模组复制到此目录)
  │   ├── Degrees of Lewdity VERSION.mod.html (加载有 ModLoader 的游戏文件) <当 `main.py` 中的 `REMOTE_TEST` 值修改为 `True` 时，本文件是必须的>
- │  ... 
+ │  ...
  ├── results (处理结果，包括压缩包和文件夹)
  ├── src (代码部分)
  ├── LICENSE
@@ -121,9 +117,7 @@
 {
   "name": "这个模组的名称",
   "version": "这个模组的版本",
-  "additionFile": [
-    "要加进压缩包的文件路径"
-  ],
+  "additionFile": ["要加进压缩包的文件路径"],
   "scriptFileList_inject_early": [
     "提前注入的 js 脚本路径, 会在当前模组加载后立即插入到 dom 中由浏览器按照 <script> 的标注执行方式执行",
     "可以为空列表。"
@@ -165,9 +159,7 @@
 {
   "name": "举个例子",
   "version": "1.0.0",
-  "additionFile": [
-    "README.md"
-  ]
+  "additionFile": ["README.md"]
 }
 ```
 
@@ -323,12 +315,12 @@ result = Math.floor(result * modifier);  /* 原先就有的 */
       "addonName": "ReplacePatcherAddon",
       "modVersion": "1.0.0",
       "js": [
-          {
-            "fileName": "ingame.js",
-            "from": "result = Math.floor(result * modifier);",
-            "to": "if (V.fenghuang >= 6) modifier += 0.10;\nresult = Math.floor(result * modifier);"
-          }
-        ]
+        {
+          "fileName": "ingame.js",
+          "from": "result = Math.floor(result * modifier);",
+          "to": "if (V.fenghuang >= 6) modifier += 0.10;\nresult = Math.floor(result * modifier);"
+        }
+      ]
     }
   ],
   "dependenceInfo": [
@@ -395,12 +387,12 @@ result = Math.floor(result * modifier);  /* 原先就有的 */
 
 请遵循以下格式：
 
-   1. 对于完全新建、自创的内容，比如: __新建一个段落__, __新建一个.twee文件__, __新建一张衣服的图片文件__ 等，请注意不要和原游戏内容重名。
-   2. 对于想覆盖原游戏的已有的内容，比如: __把原有的衣服图片文件重新绘制__, __对已有的段落内容中新加代码__ 等：
-      - 图片命名、路径请和原游戏文件夹中的完全一致
-      - `.twee` 中的段落，请把原游戏中有修改、增加、删除的整个段落(从 `:: PASSAGE_NAME` 开始到下一个 `:: PASSAGE_NAME` 的上一行结束)全部复制出来到你的文件中，然后进行改动
-      - __不推荐图片、js、css 文件覆盖原游戏内容，请尽量创建新的图片、js、css 文件。__
-   3. 注意你写在自己模组内容中的所有段落都应该是相比于源代码中有所改动的，如果你复制了一个段落出来但没有做改动，记得把它删掉。
+1. 对于完全新建、自创的内容，比如: **新建一个段落**, **新建一个.twee 文件**, **新建一张衣服的图片文件** 等，请注意不要和原游戏内容重名。
+2. 对于想覆盖原游戏的已有的内容，比如: **把原有的衣服图片文件重新绘制**, **对已有的段落内容中新加代码** 等：
+   - 图片命名、路径请和原游戏文件夹中的完全一致
+   - `.twee` 中的段落，请把原游戏中有修改、增加、删除的整个段落(从 `:: PASSAGE_NAME` 开始到下一个 `:: PASSAGE_NAME` 的上一行结束)全部复制出来到你的文件中，然后进行改动
+   - **不推荐图片、js、css 文件覆盖原游戏内容，请尽量创建新的图片、js、css 文件。**
+3. 注意你写在自己模组内容中的所有段落都应该是相比于源代码中有所改动的，如果你复制了一个段落出来但没有做改动，记得把它删掉。
 
 ### 举例说明
 
@@ -412,4 +404,4 @@ result = Math.floor(result * modifier);  /* 原先就有的 */
    1. 请先创建新文件：`/mods/<你的模组名称>/game/example mod test.twee`
    2. 然后在其中创作你的新段落
 
-[dol]: https://gitgud.io/Vrelnir/degrees-of-lewdity
+[ModLoader]: https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader?tab=readme-ov-file

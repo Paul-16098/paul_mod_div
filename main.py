@@ -4,6 +4,7 @@ import asyncio
 import contextlib
 import webbrowser
 import glob
+import keyboard
 
 from src.consts import HOST, PORT, DIR_MODS_ROOT
 from src.core import GameMod
@@ -48,3 +49,5 @@ if __name__ == '__main__':
             logger.warning(
                 locale(Langs.WarningWebBrowserInfo, host=HOST, port=PORT))
             app.run(host=HOST, port=PORT)
+    print("enter:",end=" ")
+    keyboard.wait("enter")
