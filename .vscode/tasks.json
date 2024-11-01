@@ -7,7 +7,7 @@
       "label": "run.bat",
       "type": "shell",
       "command": ".\\run.bat",
-      "problemMatcher": []
+      "group": "build"
     },
     {
       "label": "updata.bat",
