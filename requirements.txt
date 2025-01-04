@@ -3,3 +3,4 @@ httpx~=0.24.1
 aiofiles~=23.1.0
 flask~=3.0.0
 keyboard
+anyio>=4.4.0 # not directly required, pinned by Snyk to avoid a vulnerability
