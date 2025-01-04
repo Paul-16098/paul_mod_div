@@ -1,4 +1,3 @@
-import keyboard
 import asyncio
 import httpx
 from src.core import GameSourceCode
